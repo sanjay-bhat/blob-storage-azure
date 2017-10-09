@@ -1,0 +1,59 @@
+<html>
+<head>
+    <title>AWS Flask App</title>
+</head>
+<body>
+    <p>
+        <h1>Name: Sanjay Vasant Bhat</h1>
+        <h1>ID: 1001390524</h1>
+    </p>
+    <img src="mypic.jpg">
+    <h1>Upload File</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        Enter Number: <input type="text" name="userFileName" />
+        Choose a File: <input type="file" name="thefile" /><br />
+        <input type="submit" name="submit" value="Upload" />
+        <input type="submit" name="submit" value="Cancel" />
+    </form>
+    <br />
+    <p>{{upmessage}}</p>
+    <form action="/download" method="post" enctype="multipart/form-data">
+        Enter Filename: <input type="text" name="nameOfFile" />
+        <input type="submit" name="submit" value="Download" />
+        <input type="submit" name="submit" value="Cancel" />
+    </form>
+    <table border="1px">
+        <tr>
+            <td>NumberOfPics</td>
+        </tr>
+        {% for NumberOfPics in tblPics %}
+        <tr>
+            <td>{{NumberOfPics}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <p>{{downmessage}}</p>
+    <form action="/read" method="post" enctype="multipart/form-data">
+        Enter Calories: <input type="text" name="file" />
+        Enter Calories: <input type="text" name="number" />
+        <input type="submit" name="submit" value="Get Content" />
+        <input type="submit" name="submit" value="Cancel" />
+    </form>
+    <br />
+    <p>
+        {{usernumber}}
+        {{filecontent}}
+    </p>
+    <form action="/display" method="post" enctype="multipart/form-data">
+        Enter Calories: <input type="text" name="cal1" />
+        Enter Calories: <input type="text" name="cal2" />
+        Enter Minimum Calories: <input type="text" name="cal3" />
+        <input type="submit" name="submit" value="Get Calories" />
+    </form>
+    <form action="/remove" method="post" enctype="multipart/form-data">
+        Enter Fat: <input type="text" name="f" />
+        Enter Weight: <input type="text" name="w" />
+        <input type="submit" name="submit" value="Remove Calories" />
+    </form>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <p>
+        <h1>Name: Sanjay Vasant Bhat</h1>
+        <h1>ID: 1001390524</h1>
+    </p>
+    <h3>Time Taken : {{timetaken}}</h3>
+    <table border="1px">
+        <tr>
+            <td>ImageName</td>
+            <td>ImagePath</td>
+            <td>Calories</td>
+            <td>Weight</td>
+            <td>Fat</td>
+        </tr>
+        {% for ImageName, ImagePath, Calories, Weight, Fat in tblQuakes %}
+        <tr>
+            <td>{{ImageName}}</td>
+            <td><img src = {{ImagePath}} /></td>
+            <td>{{Calories}}</td>
+            <td>{{Weight}}</td>
+            <td>{{Fat}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br />
+    <form action="/Fatremove" method="post" enctype="multipart/form-data">
+        <input type="submit" name="submit" value="Remove Calories" />
+    </form>
+    <form action="/" method="post" enctype="multipart/form-data">
+        <input type="submit" name="submit" value="Go Back" />
+    </form>
+</body>
+</html>
